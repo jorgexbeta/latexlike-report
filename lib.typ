@@ -17,7 +17,7 @@
   logo : none,
 
   //==========Theme ===============
-  theme-color: rgb(128, 128, 128),
+  theme-color: rgb("#361f7a"),
   lang: "en", 
    participants-supplement: "Authors:", //Change it if you change the language
  
