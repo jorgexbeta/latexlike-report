@@ -133,7 +133,7 @@
   if logo != none {
     place(rect(fill: theme-color, width: 2.5pt, height: 1.4in))
     set image(width: 4cm)
-    place(top + left, logo)
+    place(top + left,dx: 30pt, logo)
   }
  
   
