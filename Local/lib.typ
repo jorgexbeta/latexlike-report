@@ -23,8 +23,8 @@
  
             
   //=========Font =================
-  title-font: "Noto Sans",
-  font: "New Computer Modern",
+  title-font: "Latin Modern Roman",
+  font: "Latin Modern Roman",
   font-size : 12pt,
   font-weight: 400,
 
@@ -139,16 +139,16 @@
   
   v(3fr)
 
-  align(center, text(font: title-font, 2.5em, weight: 700, title, fill:font-color))
+  align(center, text(font: title-font, 2.5em, weight: 500, title, ))
 
   v(2.5em, weak: true)
 
   if subtitle != none {
-  line(length: 100%,stroke: 1.5pt + primary-color.darken(30%) )
+  line(length: 100%,stroke: 1pt  )
   v(-0.3em)
-  align(center, text(font: title-font, 1.5em, weight: 700, subtitle))
+  align(center, text(font: title-font, 1.5em, weight: 500, subtitle))
   v(-0.2em)
-  line(length: 100%,stroke: 1pt + primary-color.darken(30%) )
+  line(length: 100%,stroke: 0.6pt  )
   v(2em, weak: true)
   }
 
@@ -178,7 +178,9 @@
 
   // Outline begin
   
-  if show-outline {outline(title: auto, depth: 3,indent: auto)}
+  if show-outline {
+    show outline: set text(font:title-font)
+    outline(title: auto, depth: 3,indent: auto)}
 
   // Outline end
  
@@ -196,7 +198,7 @@
     right-side:h-r,
     center-side: h-c,
   ),
-  chic-separator( stroke(0.7pt + theme-color.darken(40%))),
+  chic-separator( chic-styled-separator("bold-center",color: theme-color.darken(30%))),
   chic-offset(20pt),
   chic-height(3cm)
 )
