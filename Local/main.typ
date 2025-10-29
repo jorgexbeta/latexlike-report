@@ -20,6 +20,7 @@
   logo : image("Images/InSTEC.svg"),
 
   //==========Theme ===============
+  style: 1, //chose betewn differnt styles (1,2)
   theme-color: rgb("#0f2787"),
   lang: "en", 
    participants-supplement: "Authors:", //Change it if you change the language

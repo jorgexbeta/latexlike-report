@@ -17,9 +17,11 @@
   logo : none,
 
   //==========Theme ===============
+  style: 1, //chose betewn differnt styles (1,2)
+  
   theme-color: rgb("#1c95c9"),
   lang: "en", 
-   participants-supplement: "Authors:", //Change it if you change the language
+  participants-supplement: "Authors:", //Change it if you change the language
  
             
   //=========Font =================
@@ -80,7 +82,7 @@
   
  show figure.caption: it => [
     #strong[#it.supplement
-    #context it.counter.display(it.numbering) 
+    it.counter.display(it.numbering) 
     #it.separator]
     #it.body
  ]
@@ -99,7 +101,7 @@
   
   //////////////////////////colors ///////////////
   let primary-color = rgb(theme-color.lighten((10%))) 
-  let secondary-color = color.mix(color.rgb(100%, 100%, 100%, 50%), primary-color, space:rgb)
+  let secondary-color = color.mix(color.rgb(100%, 100%, 100%, 80%), primary-color, space:rgb)
   let bg-color = theme-color.lighten(90%)
   let font-color = theme-color.darken(30%)
 /////////////////// SECTIONS ///////////////////////////
@@ -126,8 +128,9 @@
                                                            
                                                            
                                                           
-  //////////////////////// Cover begin////////////////////////////
-
+  //////////////////////// Cover begin  style 1////////////////////////////
+  
+  if style == 1 {
 
 
   if logo != none {
@@ -174,7 +177,59 @@
 
   pagebreak()
 
-  //////////////////////// Cover end////////////////////////////
+  }
+  //////////////////////// Cover end style 1////////////////////////////
+
+  //////////////////////// Cover begin  style 2///////////////////////
+  
+  if style == 2 {
+    
+ if logo != none {
+    set image(width: 4cm)
+    place(top + right, logo)
+  }
+ 
+   // decorations at top left
+  place(top + left, dx: -16%, dy: -10%,    polygon(
+  (50%, 0pt),
+  (-50%, -7cm),
+  (0%,  7cm),fill: primary-color) 
+  )
+  place(top + left, dx: -10%, dy:90%,  circle(radius: 75pt, fill: secondary-color))
+  
+  // decorations at bottom right
+  place(bottom +right, dx: 40%, dy: 30%, circle(radius: 150pt, fill: secondary-color.lighten(30%)))
+
+  
+  v(2fr)
+
+  align(center, text(font: title-font, 3.2em, weight: font-weight, title))
+  v(2em, weak: true)
+  if subtitle != none {
+  line(length: 100%,stroke: 1pt )
+  align(center, text(font: title-font, 2.2em, weight: font-weight, subtitle))
+  line(length: 100%,stroke: 0.6pt,)
+  v(2em, weak: true)
+  }
+  align(center, text(1.1em, date))
+
+  v(2fr)
+
+  // Author and other information.
+  align(center)[
+      #if author != "" {strong(author); linebreak();}
+      #if affiliation != none {affiliation; linebreak();}
+      #if year != none {year; linebreak();}
+      #if class != none {emph(class); linebreak();}
+      #if other != none {emph(other.join(linebreak())); linebreak();}
+    ]
+
+  pagebreak()
+
+  }
+
+  ////////////////////////  Cover end style 2   ////////////////////////////////////////
+
 
   // Outline begin
   
