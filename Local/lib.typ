@@ -82,7 +82,7 @@
   
  show figure.caption: it => [
     #strong[#it.supplement
-    it.counter.display(it.numbering) 
+    #context it.counter.display(it.numbering) 
     #it.separator]
     #it.body
  ]
