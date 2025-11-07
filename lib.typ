@@ -157,7 +157,17 @@
 
   //////////  Participants
   align(left)[
-    #if participants != none {strong(participants-supplement);linebreak(); (author);linebreak();participants}
+    #if participants != none {
+      strong(participants-supplement);
+      linebreak(); 
+      (author);
+      linebreak(); 
+      for p in participants [
+      #p
+      #linebreak() 
+    ]
+
+    }
   ]
 
   v(2fr)

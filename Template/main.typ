@@ -8,7 +8,7 @@
   title: [Report Title],
   subtitle: [Report Subtitle],
   
-  participants: [Some other author], // In case of several authors (the name in author parameter will go first) Use content [] or none.
+  participants: ("Author2","Author3","Author4"), // In case of several authors (the name in author parameter will go first) Use content [] or none.
   
   affiliation: [Your institution],
   year: [2025],
